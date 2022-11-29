@@ -1,0 +1,163 @@
+@import "./themes.scss";
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.keypad{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+    padding: 1.4rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.screen{
+    aspect-ratio: 5;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1.5rem;
+}
+
+.header {
+    aspect-ratio: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+
+    h1 {
+        color: white;
+        font-size: 1.75rem;
+    }
+}
+
+#root > *{
+    width: 7rem * 4;
+    max-width: 80vw;
+}
+
+#result{
+    font-size: 40px;
+    color: white;
+}
+
+.themeWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 8rem;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p{
+            position: relative;
+            bottom: 1.75rem;
+        }
+    }
+
+    p {
+        color: white;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+    }
+
+    .themebg{
+        width: 4rem;
+        aspect-ratio: 3;
+        box-sizing: content-box;
+        padding: 0.3rem 0.3rem;
+        background-color: $calcbg1;
+        border-radius: 99rem;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        position: relative;
+
+        div{ 
+            position: absolute; 
+            width: inherit; 
+            aspect-ratio: inherit;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #themeSel{
+            position: absolute;
+            width: 30%;
+            aspect-ratio: 1;
+            border-radius: 999rem;
+            background-color: $evalKeybg1;
+            top: 50%;
+            left: 33%;
+            transform: translate(-100%, -50%);
+            pointer-events: none;
+        }
+    }
+}
+
+.key {
+    aspect-ratio: 1.65;
+
+    border-radius: 0.45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 32px;
+    
+
+    &.memory, &.eval{
+        font-size: 25px;
+    }
+}
+
+.wideKey{
+    aspect-ratio: 4;
+    grid-column: span 2 / auto;
+}
+
+@media only screen and (max-width: 480px) {
+    .key{
+        aspect-ratio: 1;
+        &.wideKey{
+            aspect-ratio: 2.5;
+        }
+
+        &.memory, &.eval{
+            font-size: 15px;
+        }
+    }
+
+    .screen{
+        aspect-ratio: 3.5;
+    }
+}

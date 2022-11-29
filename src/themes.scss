@@ -1,0 +1,87 @@
+/* THEME 1 */
+$mainbg1: hsl(222, 26%, 31%);
+$keypadbg1: hsl(223, 31%, 20%);
+$calcbg1: hsl(224, 36%, 15%);
+$keycolor1: hsl(221, 14%, 31%);
+$keybg1: hsl(45, 7%, 89%);
+$keyshadow1: hsl(35, 11%, 61%);
+$memKeybg1: hsl(225, 21%, 49%);
+$memKeyshadow1: hsl(224, 28%, 35%);
+$evalKeycolor1: white;
+$evalKeybg1: hsl(6, 63%, 50%);
+$evalKeyshadow1: hsl(6, 70%, 34%);
+/* THEME 1 */
+
+/* THEME 2 */
+$mainbg2: hsl(0, 0%, 90%);
+$keypadbg2: hsl(0, 5%, 81%);
+$calcbg2: hsl(0, 0%, 93%);
+$keycolor2: $keycolor1;
+$keybg2: $keybg1;
+$keyshadow2: $keyshadow1;
+$memKeybg2: hsl(185, 58%, 25%);
+$memKeyshadow2: hsl(185, 58%, 25%);
+$evalKeycolor2: white;
+$evalKeybg2: hsl(25, 98%, 40%);
+$evalKeyshadow2: hsl(25, 99%, 27%);
+/* THEME 2 */
+
+/* THEME 3 */
+$mainbg3: hsl(268, 75%, 9%);
+$keypadbg3: hsl(268, 71%, 12%);
+$calcbg3: $keypadbg3;
+$keycolor3: hsl(52, 100% ,62%);
+$keybg3: hsl(268, 47%, 21%);
+$keyshadow3: hsl(290, 70%, 36%);
+$memKeybg3: hsl(281, 89%, 26%);
+$memKeyshadow3: hsl(285, 91%, 52%);
+$evalKeycolor3: black;
+$evalKeybg3: hsl(176, 100%, 44%);
+$evalKeyshadow3: hsl(177, 92%, 70%);
+/* THEME 3 */
+
+body {
+    &.theme1 { background-color: $mainbg1; }
+    &.theme2 { background-color: $mainbg2; }
+    &.theme3 { background-color: $mainbg3; }
+}
+
+.screen {
+    &.theme1 { background-color: $calcbg1; }
+    &.theme2 { background-color: $calcbg2; }
+    &.theme3 { background-color: $calcbg3; }
+}
+
+.keypad {
+    &.theme1 { background-color: $keypadbg1; }
+    &.theme2 { background-color: $keypadbg2; }
+    &.theme3 { background-color: $keypadbg3; }
+}
+
+$shadowDepth: 5px;
+.key {
+    &.theme1 { background-color: $keybg1; color: $keycolor1;
+               box-shadow: 0px $shadowDepth 0px $keyshadow1; }
+    &.theme2 { background-color: $keybg2; color: $keycolor2;
+    box-shadow: 0px $shadowDepth 0px $keyshadow2; }
+    &.theme3 { background-color: $keybg3; color: $keycolor3;
+        box-shadow: 0px $shadowDepth 0px $keyshadow3; }
+}
+
+.memory{
+    &.theme1 { background-color: $memKeybg1; color: white;
+               box-shadow: 0px $shadowDepth 0px $memKeyshadow1; }
+    &.theme2 { background-color: $memKeybg2; color: white;
+    box-shadow: 0px $shadowDepth 0px $memKeyshadow2; }
+    &.theme3 { background-color: $memKeybg3; color: white;
+        box-shadow: 0px $shadowDepth 0px $memKeyshadow3; }
+}
+
+.eval{
+    &.theme1 { background-color: $evalKeybg1; color: $evalKeycolor1;
+               box-shadow: 0px $shadowDepth 0px $evalKeyshadow1; }
+    &.theme2 { background-color: $evalKeybg2; color: $evalKeycolor2;
+    box-shadow: 0px $shadowDepth 0px $evalKeyshadow2; }
+    &.theme3 { background-color: $evalKeybg3; color: $evalKeycolor3;
+        box-shadow: 0px $shadowDepth 0px $evalKeyshadow3; }
+}
