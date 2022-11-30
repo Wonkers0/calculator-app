@@ -1,7 +1,7 @@
 export default function Screen() {
     return (
         <div className="screen theme1">
-            <p id="result">399,981</p>
+            <p id="result" className="theme1">0</p>
         </div>
     )
 }

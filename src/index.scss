@@ -8,8 +8,6 @@
 }
 
 body {
-    position: fixed;
-    width: 100vw;
     height: 100vh;
     
     display: flex;
@@ -25,7 +23,7 @@ p, h1, h2, h3, h4, h5, h6{
 .keypad{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    grid-gap: 1rem;
 
     padding: 1.4rem 1rem;
     border-radius: 0.5rem;
@@ -50,7 +48,6 @@ p, h1, h2, h3, h4, h5, h6{
     padding: 0 0.5rem;
 
     h1 {
-        color: white;
         font-size: 1.75rem;
     }
 }
@@ -62,7 +59,6 @@ p, h1, h2, h3, h4, h5, h6{
 
 #result{
     font-size: 40px;
-    color: white;
 }
 
 .themeWrapper {
@@ -75,6 +71,7 @@ p, h1, h2, h3, h4, h5, h6{
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
 
         p{
             position: relative;
@@ -83,7 +80,6 @@ p, h1, h2, h3, h4, h5, h6{
     }
 
     p {
-        color: white;
         text-transform: uppercase;
         font-size: 0.7rem;
     }
@@ -93,7 +89,6 @@ p, h1, h2, h3, h4, h5, h6{
         aspect-ratio: 3;
         box-sizing: content-box;
         padding: 0.3rem 0.3rem;
-        background-color: $calcbg1;
         border-radius: 99rem;
 
         display: grid;
@@ -107,6 +102,7 @@ p, h1, h2, h3, h4, h5, h6{
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            pointer-events: none;
         }
 
         #themeSel{
@@ -114,7 +110,6 @@ p, h1, h2, h3, h4, h5, h6{
             width: 30%;
             aspect-ratio: 1;
             border-radius: 999rem;
-            background-color: $evalKeybg1;
             top: 50%;
             left: 33%;
             transform: translate(-100%, -50%);
@@ -133,7 +128,8 @@ p, h1, h2, h3, h4, h5, h6{
 
     font-family: 'Readex Pro', sans-serif;
     font-size: 32px;
-    
+    cursor: pointer;
+    user-select: none;
 
     &.memory, &.eval{
         font-size: 25px;

@@ -10,6 +10,7 @@ $memKeyshadow1: hsl(224, 28%, 35%);
 $evalKeycolor1: white;
 $evalKeybg1: hsl(6, 63%, 50%);
 $evalKeyshadow1: hsl(6, 70%, 34%);
+$topColor1: white;
 /* THEME 1 */
 
 /* THEME 2 */
@@ -19,11 +20,12 @@ $calcbg2: hsl(0, 0%, 93%);
 $keycolor2: $keycolor1;
 $keybg2: $keybg1;
 $keyshadow2: $keyshadow1;
-$memKeybg2: hsl(185, 58%, 25%);
+$memKeybg2: hsl(185, 42%, 37%);
 $memKeyshadow2: hsl(185, 58%, 25%);
 $evalKeycolor2: white;
 $evalKeybg2: hsl(25, 98%, 40%);
 $evalKeyshadow2: hsl(25, 99%, 27%);
+$topColor2: hsl(60, 10%, 19%);
 /* THEME 2 */
 
 /* THEME 3 */
@@ -38,7 +40,10 @@ $memKeyshadow3: hsl(285, 91%, 52%);
 $evalKeycolor3: black;
 $evalKeybg3: hsl(176, 100%, 44%);
 $evalKeyshadow3: hsl(177, 92%, 70%);
+$topColor3: hsl(52, 100%, 62%);
 /* THEME 3 */
+
+$transDur: 300ms; // Transition Duration
 
 body {
     &.theme1 { background-color: $mainbg1; }
@@ -68,6 +73,12 @@ $shadowDepth: 5px;
         box-shadow: 0px $shadowDepth 0px $keyshadow3; }
 }
 
+.key:hover{
+    &.theme1 { background-color: lighten($keybg1, 10%)}
+    &.theme2 { background-color: lighten($keybg2, 10%)}
+    &.theme3 { background-color: lighten($keybg3, 10%)}
+}
+
 .memory{
     &.theme1 { background-color: $memKeybg1; color: white;
                box-shadow: 0px $shadowDepth 0px $memKeyshadow1; }
@@ -77,6 +88,12 @@ $shadowDepth: 5px;
         box-shadow: 0px $shadowDepth 0px $memKeyshadow3; }
 }
 
+.memory:hover{
+    &.theme1 { background-color: lighten($memKeybg1, 10%)}
+    &.theme2 { background-color: lighten($memKeybg2, 10%)}
+    &.theme3 { background-color: lighten($memKeybg3, 10%)}
+}
+
 .eval{
     &.theme1 { background-color: $evalKeybg1; color: $evalKeycolor1;
                box-shadow: 0px $shadowDepth 0px $evalKeyshadow1; }
@@ -84,4 +101,38 @@ $shadowDepth: 5px;
     box-shadow: 0px $shadowDepth 0px $evalKeyshadow2; }
     &.theme3 { background-color: $evalKeybg3; color: $evalKeycolor3;
         box-shadow: 0px $shadowDepth 0px $evalKeyshadow3; }
+}
+
+.eval:hover{
+    &.theme1 { background-color: lighten($evalKeybg1, 10%)}
+    &.theme2 { background-color: lighten($evalKeybg2, 10%)}
+    &.theme3 { background-color: lighten($evalKeybg3, 10%)}
+}
+
+#themeSel {
+    transition: background-color $transDur, left $transDur ease-out;
+    &.theme1 { background-color: $evalKeybg1; }
+    &.theme2 { background-color: $evalKeybg2; }
+    &.theme3 { background-color: $evalKeybg3; }
+}
+
+.themebg{
+    &.theme1 { background-color: $calcbg1; }
+    &.theme2 { background-color: $calcbg2; }
+    &.theme3 { background-color: $calcbg3; }
+}
+
+#result, .header *{
+    &.theme1 { color: $topColor1; }
+    &.theme2 { color: $topColor2; }
+    &.theme3 { color: $topColor3; }
+}
+
+
+.preload{
+    transition: none !important;
+}
+
+.theme1, .theme2, .theme3 {
+    transition: background-color $transDur, color $transDur; 
 }
