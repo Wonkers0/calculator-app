@@ -12,5 +12,8 @@ $(window).on("load", () => {
   $("body").removeClass("preload");
 });
 
-let calcResult = 0;
-export default calcResult;
+let storedNum = 0
+let storedOperator: string | null
+const setOp = (op: string | null) => {storedOperator = op}
+const setNum = (num: number) => {storedNum = num}
+export {storedNum, storedOperator, setOp, setNum};
