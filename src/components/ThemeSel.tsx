@@ -5,9 +5,9 @@ export default function ThemeSel(){
             
             <div className="themebg theme1">
                 <div><span id="themeSel" className="theme1"></span></div>
-                <span onClick={() => {changeTheme(1)}}><p>1</p></span>
-                <span onClick={() => {changeTheme(2)}}><p>2</p></span>
-                <span onClick={() => {changeTheme(3)}}><p>3</p></span>
+                <span onClick={() => {changeTheme(1)}}><span>1</span></span>
+                <span onClick={() => {changeTheme(2)}}><span>2</span></span>
+                <span onClick={() => {changeTheme(3)}}><span>3</span></span>
             </div>
         </div>
     )

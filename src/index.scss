@@ -23,9 +23,9 @@ p, h1, h2, h3, h4, h5, h6{
 .keypad{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 1.5rem;
 
-    padding: 1.4rem 1rem;
+    padding: 1.8rem 1.4rem;
     border-radius: 0.5rem;
 }
 
@@ -38,6 +38,8 @@ p, h1, h2, h3, h4, h5, h6{
     justify-content: flex-end;
     align-items: center;
     padding-right: 1.5rem;
+
+    font-family: 'Readex Pro', sans-serif;
 }
 
 .header {
@@ -73,7 +75,8 @@ p, h1, h2, h3, h4, h5, h6{
         align-items: center;
         cursor: pointer;
 
-        p{
+        span{
+            font-family: 'Readex Pro', sans-serif;
             position: relative;
             bottom: 1.75rem;
         }
