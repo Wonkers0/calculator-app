@@ -13,20 +13,22 @@ export enum KeyType{
     EVAL = "eval"
 }
 
+let store2ndNum: boolean = false;
 export default function Key({ wide=false, char, type=KeyType.NUMERIC }: KeyProps){
     let onclick: Function = (e: MouseEventHandler, char: string) => {
         let operators = ['+', '-', 'x', '/']
         let txt = $('#result').text()
-        if(txt == 'NaN') txt = ''
+        if(!isNum(txt)) txt = ''
 
         if(!operators.includes(char)){
             if(char == 'DEL') setResult(txt.substring(0, txt.length - 1))
             else if(char == 'RESET') setResult('')
             else if(char == '=') evaluate()
             else{
-                if(storedOperator != null){
+                if(store2ndNum){
                     setNum(Number(txt))
                     setResult(char)
+                    store2ndNum = false;
                 } 
                 else setResult(txt + char)
             } 
@@ -35,6 +37,7 @@ export default function Key({ wide=false, char, type=KeyType.NUMERIC }: KeyProps
             if(storedOperator == null) setNum(Number(txt))
             else evaluate()
             setOp(char)
+            store2ndNum = true;
         }
     }
 
@@ -62,6 +65,8 @@ function calc(): number {
 
     return Number(returnVal.toFixed(15)) * 1 // 👈 Remove trailing zeros
 }
+
+const isNum = (num : string): boolean => {return !isNaN(Number(num)) && num != "Infinity"}
 
 const setResult = (val: string) => {
     if(val.length == 2 && val != '0.') val = val.replace(/^[0\t]+/, '')
